@@ -1,0 +1,100 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Encrypt USB Flash Drive Using dm-crypt" />
+<link rel=stylesheet type=text/css href=/style.css />
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<title>Binary Spawn</title>
+<style>
+.nav{
+    border:1px solid #bcbcaf;
+    border-width:1px 0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+.nav li{
+    display:inline;
+}
+.nav a{   display:inline-block;
+    padding:10px;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48278659-1', 'binaryspawn.com');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<body bgcolor=#dbdcdf text=#000000>
+<body>
+<ul class="nav">
+  <li>[<a href=http://www.binaryspawn.com/>Home</a>]</li>
+  <li>[<a href=http://www.binaryspawn.com/donate/>Donation</a>]</li>
+  <li>[<a href=http://www.binaryspawn.com/resources/>Resources</a>]</li>
+  <li>[<a href=http://www.binaryspawn.com/stats/>Server Stats</a>]</li>
+  <li>[<a href=http://www.binaryspawn.com/irc/>Irc Info</a>]</li>
+</ul>
+ <div id="wrapper">
+
+ <div id="page">
+<h1><a href=http://www.binaryspawn.com/15>Encrypt USB Flash Drive Using dm-crypt</a></h1>
+<h3>January 31, 2019</h3>
+<br>
+List devices:
+<p>
+<pre class="prettyprint">
+blkid -o list
+</pre>
+Encrypt and set passcode, make a filesystem, and mount:
+<pre class="prettyprint">
+sudo cryptsetup --type plain -v open /dev/sdc1 usb_1
+sudo mkfs -t ext4 /dev/mapper/usb_1
+sudo mount -t ext4 /dev/mapper/usb_1 mnt
+</pre>
+Unmount and close:
+<pre class="prettyprint">
+sudo umount /dev/mapper/usb_1
+sudo cryptsetup close usb_1 
+</pre>
+To reopen:
+<pre class="prettyprint">
+sudo cryptsetup --type plain -v open /dev/sdc1 usb_1
+</pre>
+Enter passcode and then mount:
+<pre class="prettyprint">
+sudo mount -t ext4 /dev/mapper/usb_1 mnt
+</pre>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=kuckuck06-20&language=en_US&marketplace=amazon&region=US&placement=B07D7SX9NS&asins=B07D7SX9NS&linkId=232d9110108948b558d4065e3b34e7e2&show_border=true&link_opens_in_new_window=true"></iframe>
+</p>
+<h2>Comments</h2>
+<p>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'binaryspawn';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<p style="text-align: center;">&#169;2013-2023 All Rights Reserved.</p>
+</div>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,101 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Jailbreaking the Kindle PW2 for $4.98" />
+<link rel=stylesheet type=text/css href=/style.css />
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<title>Binary Spawn</title>
+<style>
+.nav{
+    border:1px solid #bcbcaf;
+    border-width:1px 0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+.nav li{
+    display:inline;
+}
+.nav a{   display:inline-block;
+    padding:10px;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48278659-1', 'binaryspawn.com');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<body bgcolor=#dbdcdf text=#000000>
+<body>
+<ul class="nav">
+  <li>[<a href=http://www.binaryspawn.com/>Home</a>]</li>
+  <li>[<a href=http://www.binaryspawn.com/donate/>Donation</a>]</li>
+  <li>[<a href=http://www.binaryspawn.com/resources/>Resources</a>]</li>
+  <li>[<a href=http://www.binaryspawn.com/stats/>Server Stats</a>]</li>
+  <li>[<a href=http://www.binaryspawn.com/irc/>Irc Info</a>]</li>
+</ul>
+ <div id="wrapper">
+
+ <div id="page">
+<h1><a href=http://www.binaryspawn.com/3>Jailbreaking the Kindle PW2 for $4.98</a></h1>
+<h3>December 10, 2015</h3>
+<br>
+I recently decided to jailbreak my Kindle PW2, so I could use KOReader among other things. Unfortunately, it was running firmware 5.6.1.0.2. A serial port jailbreak is in order!
+The cheapest USB to 1.8v serial adapter I could find was a Deek-Robot PL2303TA from Amazon for $4.98 and free shipping. It ships from China, so it may take awhile to arrive. Before
+opening your kindle you may wish to copy down the serial number and extract the jailbreak to the root of the mounted filesystem.
+<br>
+<br>
+To open the Kindle, pry off the recessed faceplate using a flat-head screwdriver or knife. Mine was glued but came off surprisingly well. 
+<br>
+Next, remove the 11 screws with a #0 Phillips head screwdriver. The screw in the top middle is underneath adhesive tape.
+<br>
+<br>
+<center><img src="/img2.png" alt="img2.png" align="middle" style="width:450px;height:600px;"></center>
+<br>
+<br>
+Remove the plastic case and flip the PCB over. You may want to remove the battery before soldering. Solder the Tx, Rx, Gnd, and V+ to the correct spots. On my adapter Green is Tx, White is Rx, Black is Gnd, and Red is V+.
+<br>
+<br>
+<center><img src="/img1.png" alt="img1.png" align="middle" style="width:774px;height:514px;"></center>
+<br>
+<br>
+Now it is time to get Root! Follow this guide http://www.mobileread.com/forums/showthread.php?t=263113 for using minicom and applying the jailbreak.
+annnnnnnnd Root!
+<br>
+<br>
+<center><img src="/img3.png" alt="img3.png" align="middle" style="width:591px;height:194px;"></center>
+<br>
+<br> 
+
+</p>
+<h2>Comments</h2>
+<p>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'binaryspawn';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<p style="text-align: center;">&#169;2013-2023 All Rights Reserved.</p>
+</div>
+</div>
+</body>
+</html>

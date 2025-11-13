@@ -1,0 +1,111 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Removing Ads From the Kindle PW2" />
+<link rel=stylesheet type=text/css href=/style.css />
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<title>Binary Spawn</title>
+<style>
+.nav{
+    border:1px solid #bcbcaf;
+    border-width:1px 0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+.nav li{
+    display:inline;
+}
+.nav a{   display:inline-block;
+    padding:10px;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48278659-1', 'binaryspawn.com');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<body bgcolor=#dbdcdf text=#000000>
+<body>
+<ul class="nav">
+  <li>[<a href=http://www.binaryspawn.com/>Home</a>]</li>
+  <li>[<a href=http://www.binaryspawn.com/donate/>Donation</a>]</li>
+  <li>[<a href=http://www.binaryspawn.com/resources/>Resources</a>]</li>
+  <li>[<a href=http://www.binaryspawn.com/stats/>Server Stats</a>]</li>
+  <li>[<a href=http://www.binaryspawn.com/irc/>Irc Info</a>]</li>
+</ul>
+ <div id="wrapper">
+
+ <div id="page">
+<h1><a href=http://www.binaryspawn.com/4>Removing Ads From the Kindle PW2</a></h1>
+<h3>December 23, 2015</h3>
+<br>
+After jailbreaking a kindle you may wish to remove the annoying ads and "Swipe to Unlock". Before we can remove the ads the kindle must be jailbroken and the USBNet package installed. 
+<p>
+Put the kindle in "Airplane Mode"
+<br>
+<br>
+Toggle USB networking by entering ;un into the search box of the menu. The default IP of the kindle is 192.168.15.244
+<br>
+<br>
+To connect:
+<pre class="prettyprint">
+ifconfig
+</pre>
+Gives 
+<pre class="prettyprint">
+enp0s20u1
+</pre>
+
+Use the device name:
+
+<pre class="prettyprint">
+sudo ifconfig enp0s20u1 192.168.15.201 && ssh root@192.168.15.244
+</pre>
+
+Now that we are connected enter these commands, each line is a seperate command.
+<br>
+We want to remove 2 folders in /var/local/ and delete 3 records from a SQLite database located at /var/local/appreg.db
+<pre class="prettyprint">
+cd /var/local/
+rm -r adunits/ merchant/
+sqlite3 appreg.db "delete from properties where handlerid='dcc' and name='adunit.viewable'"
+sqlite3 appreg.db "delete from properties where handlerid='dcc' and name='dtcp_pref_ShowScreensaverPref'"
+sqlite3 appreg.db "delete from properties where handlerid='dcc' and name='dtcp_pref_ShowBannerPref'"
+reboot
+</pre>
+
+Enjoy your ad free kindle.
+
+</p>
+<h2>Comments</h2>
+<p>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'binaryspawn';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<p style="text-align: center;">&#169;2013-2023 All Rights Reserved.</p>
+</div>
+</div>
+</body>
+</html>

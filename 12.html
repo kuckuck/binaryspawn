@@ -1,0 +1,162 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Pandora Classic Review" />
+<link rel=stylesheet type=text/css href=/style.css />
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<title>Binary Spawn</title>
+<style>
+.nav{
+    border:1px solid #bcbcaf;
+    border-width:1px 0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+.nav li{
+    display:inline;
+}
+.nav a{   display:inline-block;
+    padding:10px;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48278659-1', 'binaryspawn.com');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<body bgcolor=#dbdcdf text=#000000>
+<body>
+<ul class="nav">
+  <li>[<a href=http://www.binaryspawn.com/>Home</a>]</li>
+  <li>[<a href=http://www.binaryspawn.com/donate/>Donation</a>]</li>
+  <li>[<a href=http://www.binaryspawn.com/resources/>Resources</a>]</li>
+  <li>[<a href=http://www.binaryspawn.com/stats/>Server Stats</a>]</li>
+  <li>[<a href=http://www.binaryspawn.com/irc/>Irc Info</a>]</li>
+</ul>
+ <div id="wrapper">
+
+ <div id="page">
+<h1><a href=http://www.binaryspawn.com/12>Pandora Classic Review</a></h1>
+<h3>October 15, 2018</h3>
+<br>
+The Pandora Classic is a handheld linux computer designed with gaming in mind, but capable of doing anything imaginable with linux. It is a bit dated and slow by today's standards, but a successor (the Pyra) is in development. I got mine off eBay for $137.50 with a broken shoulder button and a pretty borked software setup, which was easily remedied with a little soldering and a clean OS install. 
+<p>
+Specs are as follows:
+<br>
+<br>
+<table style="width:100%">
+  <tr>
+    <td>Processor:</td>
+    <td>ARM Cortex-A8 CPU @ 600 MHz</td>		
+  </tr>
+  <tr>
+    <td>Operating System:</td>
+    <td>Custom edition of Ångström Linux</td>
+  </tr>
+  <tr>
+    <td>Graphics:</td>
+    <td>PowerVR SGX530 @ 110 MHz</td>		
+  </tr>
+<tr>
+    <td>Memory:</td>
+    <td>256 MiB DDR-333 SDRAM</td>		
+  </tr>
+  <tr>
+    <td>Display:</td>
+    <td>800×480 resolution touchscreen LCD, 4.3" widescreen</td>		
+  </tr>
+  <tr>
+    <td>Dimensions (W x D x H):</td>
+    <td>5.523 in × 3.287 in × 1.152 in</td>		
+  </tr>
+  <tr>
+    <td>Storage:</td>
+    <td>512 MB NAND flash memory</td>		
+  </tr>
+  <tr>
+    <td></td>
+    <td>Dual SDHC card slots</td>		
+  </tr>
+  <tr>
+	  <td>Battery:</td>
+	  <td>4000 mAh rechargeable lithium polymer battery</td>
+</tr>
+ <tr>
+	  <td>Keyboard:</td>
+	  <td>43 button QWERTY and numeric keypad</td>
+</tr>
+ <tr>
+	  <td>I/O Ports:</td>
+	  <td>USB 2.0 high-speed port (480 Mbit/s)</td>
+</tr>
+ <tr>
+	  <td></td>
+	  <td>Externally accessible UART</td>
+</tr>
+ <tr>
+	  <td></td>
+	  <td>Headphone output</td>
+</tr>
+ <tr>
+	  <td></td>
+	  <td>TV output</td>
+</tr>
+ <tr>
+	  <td>WiFi</td>
+	  <td>IEEE 802.11 b/g</td>
+</tr>
+ <tr>
+	  <td>Bluetooth</td>
+	  <td>Bluetooth 2.0 + EDR</td>
+</tr>
+</table>
+<br>
+<br>
+<center><img src="/img5.png" alt="img5.png" align="middle" style="width:860px;height:600px;"></center>
+<br>
+<br>
+<center><img src="/img6.png" alt="img6.png" align="middle" style="width:643px;height:675px;"></center>
+<br>
+<br>
+A useful config tweak for me to get bluetooth music working with my car was to edit /etc/asound.conf 
+<br>
+<pre class="prettyprint">
+pcm.!default {
+    type     bluetooth
+}
+</pre>
+<br>
+Edit 12/11/2018: Wikipedia lists a 4200 mAh battery, but both of mine and the pandorawiki list 4000 mAh.
+</p>
+<h2>Comments</h2>
+<p>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'binaryspawn';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<p style="text-align: center;">&#169;2013-2023 All Rights Reserved.</p>
+</div>
+</div>
+</body>
+</html>
